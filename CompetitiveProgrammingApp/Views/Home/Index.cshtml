@@ -1,0 +1,31 @@
+﻿@model CompetitiveProgrammingApp.Models.HomeModel
+
+<script src="~/scripts/jquery-1.11.3.js"></script>
+
+<h2>Competitive Programming Beginner</h2>
+<input type="image" src="~/images/Hackerrank.png" id="hackerrank" >
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+
+        $('#hackerrank').click(function () {
+            $.ajax({
+                url: '@Url.Action("GetIntoHackerrank", "Home")',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                type:"post",
+                success: function (homeModel) {
+                    alert(homeModel['HackerRankSuccess'])
+                },
+                error: function () {
+                    alert("error")
+                }
+            });
+        });
+
+
+
+    });
+</script>
