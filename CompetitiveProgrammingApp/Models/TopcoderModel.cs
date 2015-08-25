@@ -5,10 +5,8 @@ using System.Web;
 
 namespace CompetitiveProgrammingApp.Models
 {
-    public class HomeModel
+    public class TopcoderModel
     {
-        public bool HackerRankSuccess { get; set; }
-
-        public bool TopCoderSuccess { get; set; }
+        public bool isActive { get; set; }
     }
 }

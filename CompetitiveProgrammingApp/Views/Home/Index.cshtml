@@ -1,31 +1,52 @@
 ﻿@model CompetitiveProgrammingApp.Models.HomeModel
 
-<script src="~/scripts/jquery-1.11.3.js"></script>
-
-<h2>Competitive Programming Beginner</h2>
-<input type="image" src="~/images/Hackerrank.png" id="hackerrank" >
-
-
-<script type="text/javascript">
-    $(document).ready(function () {
+<body>
+    <script src="~/scripts/jquery-1.11.3.js"></script>
+    <link href="~/css/general.css" rel="stylesheet" />
 
 
-        $('#hackerrank').click(function () {
-            $.ajax({
-                url: '@Url.Action("GetIntoHackerrank", "Home")',
+    <p style="text-align:center;">Competitive Programming Beginner</p>
+    <div id="general">
+        <input type="image" src="~/images/Hackerrank.png" id="hackerrank" style="text-align:center;border:solid;width:300px;height:100px" />
+        <input type="image" src="~/images/Topcoder.png" id="topcoder" style="text-align:center;border:solid;width:300px;height:100px" />
+        <input type="image" src="~/images/Codeforces.png" id="codeforces" style="text-align:center;border:solid;width:300px;height:100px" />
+    </div>
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+
+            $('#hackerrank').click(function () {
+                $('body').load('/Hackerrank/Index');
+            });
+
+            $('#topcoder').click(function () {
+                $('body').load('/Topcoder/Index');
+            });
+
+            $('#codeforces').click(function () {
+                $('body').load('/Codeforces/Index');
+            });
+
+
+
+
+
+            @*$('#topcoder').click(function () {
+                $.ajax({
+                    url: '@Url.Action("GetIntoTopcoder", "Home")',
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
-                type:"post",
+                type: "post",
                 success: function (homeModel) {
-                    alert(homeModel['HackerRankSuccess'])
+                    alert(homeModel['TopCoderSuccess'])
                 },
                 error: function () {
                     alert("error")
                 }
-            });
+            });*@
         });
 
-
-
-    });
-</script>
+    </script>
+</body>

@@ -3,19 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using CompetitiveProgrammingApp.Controllers.Pages;
-using CompetitiveProgrammingApp.Models;
 
-namespace CompetitiveProgrammingApp.Controllers.Home
+namespace CompetitiveProgrammingApp.Controllers.Topcoder
 {
-    public class HomeController : Controller
+    public class TopcoderController : Controller
     {
         //
-        // GET: /Home/
+        // GET: /Topcoder/
 
         public ActionResult Index()
         {
             return View();
         }
+
     }
 }

@@ -104,19 +104,28 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\Codeforces\CodeforcesController.cs" />
     <Compile Include="Controllers\Home\HomeController.cs" />
+    <Compile Include="Controllers\Hackerrank\HackerrankController.cs" />
+    <Compile Include="Controllers\Topcoder\TopcoderController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CodeforcesModel.cs" />
+    <Compile Include="Models\HackerrankModel.cs" />
     <Compile Include="Models\HomeModel.cs" />
+    <Compile Include="Models\TopcoderModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="css\general.css" />
     <Content Include="Global.asax" />
+    <Content Include="images\Codeforces.png" />
     <Content Include="images\Hackerrank.png" />
+    <Content Include="images\Topcoder.png" />
     <Content Include="scripts\jquery-1.11.3.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -129,13 +138,21 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="css\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Hackerrank\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Topcoder\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Codeforces\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
