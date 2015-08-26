@@ -7,6 +7,6 @@ namespace CompetitiveProgrammingApp.Models
 {
     public class TopcoderModel
     {
-        public bool isActive { get; set; }
+        public bool IsActive { get; set; }
     }
 }

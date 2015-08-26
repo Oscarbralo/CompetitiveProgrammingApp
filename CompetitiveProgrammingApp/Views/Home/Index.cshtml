@@ -1,22 +1,44 @@
-﻿@model CompetitiveProgrammingApp.Models.HomeModel
-
-<body>
+﻿<body>
     <script src="~/scripts/jquery-1.11.3.js"></script>
     <link href="~/css/general.css" rel="stylesheet" />
 
-
-    <p style="text-align:center;">Competitive Programming Beginner</p>
-    <div id="general">
-        <input type="image" src="~/images/Hackerrank.png" id="hackerrank" style="text-align:center;border:solid;width:300px;height:100px" />
-        <input type="image" src="~/images/Topcoder.png" id="topcoder" style="text-align:center;border:solid;width:300px;height:100px" />
-        <input type="image" src="~/images/Codeforces.png" id="codeforces" style="text-align:center;border:solid;width:300px;height:100px" />
+    <p id="competitive" style="text-align: center; font-size: 48px">Competitive Programming Beginner</p>
+    <div id="competitiveProgramming">
+        <input type="image" src="~/images/Hackerrank.png" id="hackerrank" style="text-align: center; border: solid; width: 300px; height: 100px" />
+        <input type="image" src="~/images/Topcoder.png" id="topcoder" style="text-align: center; border: solid; width: 300px; height: 100px" />
+        <input type="image" src="~/images/Codeforces.png" id="codeforces" style="text-align: center; border: solid; width: 300px; height: 100px" />
+        <input type="image" src="~/images/Codechef.png" id="codechef" style="text-align: center; border: solid; width: 300px; height: 100px" />
+        <input type="image" src="~/images/Coderbyte.png" id="coderbyte" style="text-align: center; border: solid; width: 300px; height: 100px" />
+        <input type="image" src="~/images/Leetcode.jpg" id="leetcode" style="text-align: center; border: solid; width: 300px; height: 100px" />
+        <input type="image" src="~/images/Codeeval.png" id="codeeval" style="text-align: center; border: solid; width: 300px; height: 100px" />
+        <input type="image" src="~/images/Hackerearth.png" id="hackerearth" style="text-align: center; border: solid; width: 300px; height: 100px" />
+        <input type="image" src="~/images/Uva.png" id="uva" style="text-align: center; border: solid; width: 300px; height: 100px" />
+        <input type="image" src="~/images/Codingame.png" id="codingame" style="text-align: center; border: solid; width: 300px; height: 100px" />
+        <input type="image" src="~/images/Codeschool.png" id="codeschool" style="text-align: center; border: solid; width: 300px; height: 100px" />
+        <input type="image" src="~/images/Spoj.png" id="spoj" style="text-align: center; border: solid; width: 300px; height: 100px" />
+        <input type="image" src="~/images/Codehunt.png" id="codehunt" style="text-align: center; border: solid; width: 300px; height: 100px" />
+        <input type="image" src="~/images/Checkio.png" id="checkio" style="text-align: center; border: solid; width: 300px; height: 100px" />
+        <input type="image" src="~/images/Empireofcode.png" id="empireofcode" style="text-align: center; border: solid; width: 300px; height: 100px" />
+        <input type="image" src="~/images/Programmr.png" id="programmr" style="text-align: center; border: solid; width: 300px; height: 100px" />
+        <input type="image" src="~/images/Codealike.png" id="codealike" style="text-align: center; border: solid; width: 300px; height: 100px" />
+        <input type="image" src="~/images/Codefight.png" id="codefight" style="text-align: center; border: solid; width: 300px; height: 100px" />
+    </div>
+    <p id="bugBounty" style="text-align: center; font-size: 48px">Bug Bounty Programs</p>
+    <div id="bugBountyPrograms">
+        <input type="image" src="~/images/Bugcrowd.png" id="bugcrowd" style="text-align: center; border: solid; width: 300px; height: 100px" />
+        <input type="image" src="~/images/Hackerone.png" id="hackerone" style="text-align: center; border: solid; width: 300px; height: 100px" />
+        <input type="image" src="~/images/Crowdcurity.png" id="crowdcurity" style="text-align: center; border: solid; width: 300px; height: 100px" />
+    </div>
+    <p id="courses" style="text-align: center; font-size: 48px">Courses websites</p>
+    <div id="coursesWebsites">
+        <input type="image" src="~/images/Pluralsight.png" id="pluralsight" style="text-align: center; border: solid; width: 300px; height: 100px" />
     </div>
 
 
     <script type="text/javascript">
         $(document).ready(function () {
 
-
+            // Competitive programming
             $('#hackerrank').click(function () {
                 $('body').load('/Hackerrank/Index');
             });
@@ -29,6 +51,86 @@
                 $('body').load('/Codeforces/Index');
             });
 
+            $('#codechef').click(function () {
+                $('body').load('/Codechef/Index');
+            });
+
+            $('#coderbyte').click(function () {
+                $('body').load('/Coderbyte/Index');
+            });
+
+            $('#leetcode').click(function () {
+                $('body').load('/Leetcode/Index');
+            });
+
+            $('#codeeval').click(function () {
+                $('body').load('/Codeeval/Index');
+            });
+
+            $('#hackerearth').click(function () {
+                $('body').load('/Hackerearth/Index');
+            });
+
+            $('#uva').click(function () {
+                $('body').load('/Uva/Index');
+            });
+
+            $('#codingame').click(function () {
+                $('body').load('/Codingame/Index');
+            });
+
+            $('#codeschool').click(function () {
+                $('body').load('/Codeschool/Index');
+            });
+
+            $('#spoj').click(function () {
+                $('body').load('/Spoj/Index');
+            });
+
+            $('#codehunt').click(function () {
+                $('body').load('/Codehunt/Index');
+            });
+
+            $('#checkio').click(function () {
+                $('body').load('/Checkio/Index');
+            });
+
+            $('#empireofcode').click(function () {
+                $('body').load('/Empireofcode/Index');
+            });
+
+            $('#programmr').click(function () {
+                $('body').load('/Programmr/Index');
+            });
+
+            $('#codealike').click(function () {
+                $('body').load('/Codealike/Index');
+            });
+
+            $('#codefight').click(function () {
+                $('body').load('/Codefight/Index');
+            });
+
+
+            //Bug bounty programs
+            $('#bugcrowd').click(function () {
+                $('body').load('/Bugcrowd/Index');
+            });
+
+            $('#hackerone').click(function () {
+                $('body').load('/Hackerone/Index');
+            });
+
+            $('#crowdcurity').click(function () {
+                $('body').load('/Crowdcurity/Index');
+            });
+
+
+
+            //Courses
+            $('#pluralsight').click(function () {
+                $('body').load('/Pluralsight/Index');
+            });
 
 
 

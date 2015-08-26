@@ -7,6 +7,6 @@ namespace CompetitiveProgrammingApp.Models
 {
     public class HackerrankModel
     {
-        public bool isActive { get; set; }
+        public bool IsActive { get; set; }
     }
 }

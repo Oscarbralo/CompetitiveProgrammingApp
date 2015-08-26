@@ -7,6 +7,6 @@ namespace CompetitiveProgrammingApp.Models
 {
     public class CodeforcesModel
     {
-        public bool isActive { get; set; }
+        public bool IsActive { get; set; }
     }
 }
