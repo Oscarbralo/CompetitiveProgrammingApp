@@ -29,9 +29,21 @@
         <input type="image" src="~/images/Hackerone.png" id="hackerone" style="text-align: center; border: solid; width: 300px; height: 100px" />
         <input type="image" src="~/images/Crowdcurity.png" id="crowdcurity" style="text-align: center; border: solid; width: 300px; height: 100px" />
     </div>
+    <p id="security" style="text-align: center; font-size: 48px">Hacking/Security</p>
+    <div id="securityReadings">
+        <input type="image" src="~/images/Owasp.png" id="owasp" style="text-align: center; border: solid; width: 300px; height: 100px" />
+        <input type="image" src="~/images/Shodan.png" id="shodan" style="text-align: center; border: solid; width: 300px; height: 100px" />
+    </div>
     <p id="courses" style="text-align: center; font-size: 48px">Courses websites</p>
     <div id="coursesWebsites">
         <input type="image" src="~/images/Pluralsight.png" id="pluralsight" style="text-align: center; border: solid; width: 300px; height: 100px" />
+        <input type="image" src="~/images/Coursera.png" id="coursera" style="text-align: center; border: solid; width: 300px; height: 100px" />
+        <input type="image" src="~/images/Codecademy.png" id="codecademy" style="text-align: center; border: solid; width: 300px; height: 100px" />
+        <input type="image" src="~/images/Mit.png" id="mit" style="text-align: center; border: solid; width: 300px; height: 100px" />
+        <input type="image" src="~/images/Edx.png" id="edx" style="text-align: center; border: solid; width: 300px; height: 100px" />
+        <input type="image" src="~/images/Udacity.png" id="udacity" style="text-align: center; border: solid; width: 300px; height: 100px" />
+        <input type="image" src="~/images/Udemy.png" id="udemy" style="text-align: center; border: solid; width: 300px; height: 100px" />
+        <input type="image" src="~/images/Bigdatauniversity.png" id="bigdatauniversity" style="text-align: center; border: solid; width: 300px; height: 100px" />
     </div>
 
 
@@ -126,10 +138,47 @@
             });
 
 
+            //Security readings
+            $('#owasp').click(function () {
+                $('body').load('/Owasp/Index');
+            });
+
+            $('#shodan').click(function () {
+                $('body').load('/Shodan/Index');
+            });
+
 
             //Courses
             $('#pluralsight').click(function () {
                 $('body').load('/Pluralsight/Index');
+            });
+
+            $('#coursera').click(function () {
+                $('body').load('/Coursera/Index');
+            });
+
+            $('#codecademy').click(function () {
+                $('body').load('/Codecademy/Index');
+            });
+
+            $('#mit').click(function () {
+                $('body').load('/Mit/Index');
+            });
+
+            $('#edx').click(function () {
+                $('body').load('/Edx/Index');
+            });
+
+            $('#udacity').click(function () {
+                $('body').load('/Udacity/Index');
+            });
+
+            $('#udemy').click(function () {
+                $('body').load('/Udemy/Index');
+            });
+
+            $('#bigdatauniversity').click(function () {
+                $('body').load('/Bigdatauniversity/Index');
             });
 
 

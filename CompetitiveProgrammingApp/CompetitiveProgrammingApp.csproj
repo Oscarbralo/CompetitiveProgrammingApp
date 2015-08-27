@@ -104,9 +104,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\Bigdatauniversity\BigdatauniversityController.cs" />
     <Compile Include="Controllers\Bugcrowd\BugcrowdController.cs" />
     <Compile Include="Controllers\Checkio\CheckioController.cs" />
     <Compile Include="Controllers\Codealike\CodealikeController.cs" />
+    <Compile Include="Controllers\Codecademy\CodecademyController.cs" />
     <Compile Include="Controllers\Codechef\CodechefController.cs" />
     <Compile Include="Controllers\Codeeval\CodeevalController.cs" />
     <Compile Include="Controllers\Codefight\CodefightController.cs" />
@@ -115,24 +117,33 @@
     <Compile Include="Controllers\Coderbyte\CoderbyteController.cs" />
     <Compile Include="Controllers\Codeschool\CodeschoolController.cs" />
     <Compile Include="Controllers\Codingame\CodingameController.cs" />
+    <Compile Include="Controllers\Coursera\CourseraController.cs" />
     <Compile Include="Controllers\Crowdcurity\CrowdcurityController.cs" />
+    <Compile Include="Controllers\Edx\EdxController.cs" />
     <Compile Include="Controllers\Empireofcode\EmpireofcodeController.cs" />
     <Compile Include="Controllers\Hackerearth\HackerearthController.cs" />
     <Compile Include="Controllers\Hackerone\HackeroneController.cs" />
     <Compile Include="Controllers\Home\HomeController.cs" />
     <Compile Include="Controllers\Hackerrank\HackerrankController.cs" />
     <Compile Include="Controllers\Leetcode\LeetcodeController.cs" />
+    <Compile Include="Controllers\Mit\MitController.cs" />
+    <Compile Include="Controllers\Owasp\OwaspController.cs" />
     <Compile Include="Controllers\Pluralsight\PluralsightController.cs" />
     <Compile Include="Controllers\Programmr\ProgrammrController.cs" />
+    <Compile Include="Controllers\Shodan\ShodanController.cs" />
     <Compile Include="Controllers\Spoj\SpojController.cs" />
     <Compile Include="Controllers\Topcoder\TopcoderController.cs" />
+    <Compile Include="Controllers\Udacity\UdacityController.cs" />
+    <Compile Include="Controllers\Udemy\UdemyController.cs" />
     <Compile Include="Controllers\Uva\UvaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\BigdatauniversityModel.cs" />
     <Compile Include="Models\BugcrowdModel.cs" />
     <Compile Include="Models\CheckioModel.cs" />
     <Compile Include="Models\CodealikeModel.cs" />
+    <Compile Include="Models\CodecademyModel.cs" />
     <Compile Include="Models\CodechefModel.cs" />
     <Compile Include="Models\CodeevalModel.cs" />
     <Compile Include="Models\CodefightModel.cs" />
@@ -141,16 +152,23 @@
     <Compile Include="Models\CoderbyteModel.cs" />
     <Compile Include="Models\CodeschoolModel.cs" />
     <Compile Include="Models\CodingameModel.cs" />
+    <Compile Include="Models\CourseraModel.cs" />
     <Compile Include="Models\CrowdcurityModel.cs" />
+    <Compile Include="Models\EdxModel.cs" />
     <Compile Include="Models\EmpireofcodeModel.cs" />
     <Compile Include="Models\HackerearthModel.cs" />
     <Compile Include="Models\HackeroneModel.cs" />
     <Compile Include="Models\HackerrankModel.cs" />
     <Compile Include="Models\LeetcodeModel.cs" />
+    <Compile Include="Models\MitModel.cs" />
+    <Compile Include="Models\OwaspModel.cs" />
     <Compile Include="Models\PluralsightModel.cs" />
     <Compile Include="Models\ProgrammrModel.cs" />
+    <Compile Include="Models\ShodanModel.cs" />
     <Compile Include="Models\SpojModel.cs" />
     <Compile Include="Models\TopcoderModel.cs" />
+    <Compile Include="Models\UdacityModel.cs" />
+    <Compile Include="Models\UdemyModel.cs" />
     <Compile Include="Models\UvaModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -160,9 +178,11 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="css\general.css" />
     <Content Include="Global.asax" />
+    <Content Include="images\Bigdatauniversity.png" />
     <Content Include="images\Bugcrowd.png" />
     <Content Include="images\Checkio.png" />
     <Content Include="images\Codealike.png" />
+    <Content Include="images\Codecademy.png" />
     <Content Include="images\Codechef.png" />
     <Content Include="images\Codefight.png" />
     <Content Include="images\Codeforces.png" />
@@ -170,17 +190,24 @@
     <Content Include="images\Coderbyte.png" />
     <Content Include="images\Codeschool.png" />
     <Content Include="images\Codingame.png" />
+    <Content Include="images\Coursera.png" />
     <Content Include="images\Crowdcurity.png" />
+    <Content Include="images\Edx.png" />
     <Content Include="images\Empireofcode.png" />
     <Content Include="images\Hackerearth.png" />
     <Content Include="images\Hackerone.png" />
     <Content Include="images\Hackerrank.png" />
     <Content Include="images\Leetcode.jpg" />
+    <Content Include="images\Mit.png" />
+    <Content Include="images\Owasp.png" />
     <Content Include="images\Pluralsight.png" />
     <Content Include="images\Programmr.png" />
+    <Content Include="images\Shodan.png" />
     <Content Include="images\Spoj.png" />
     <Content Include="images\Topcoder.png" />
     <Content Include="images\Codeeval.png" />
+    <Content Include="images\Udacity.png" />
+    <Content Include="images\Udemy.png" />
     <Content Include="images\Uva.png" />
     <Content Include="scripts\jquery-1.11.3.js" />
     <Content Include="Web.config" />
@@ -266,6 +293,33 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Pluralsight\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Coursera\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Codecademy\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Mit\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Edx\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Owasp\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Udacity\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Udemy\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Bigdatauniversity\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shodan\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
