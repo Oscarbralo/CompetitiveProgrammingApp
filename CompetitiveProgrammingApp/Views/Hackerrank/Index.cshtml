@@ -4,12 +4,42 @@
 
 <body>
 
-    <p style="text-align:center;border:solid"><img id="title" src="~/images/Hackerrank.png" style="width:300px;height:100px" /></p>
-    <div style="text-align:center;border:solid"><a href="https://www.hackerrank.com/">HackerRank</a></div>
+    <p style="text-align: center; border: solid">
+        <img id="title" src="~/images/Hackerrank.png" style="width: 300px; height: 100px" />
+    </p>
+    <div style="text-align: center; border: solid; font-size: 24px"><a href="https://www.hackerrank.com/">HackerRank</a></div>
+    <p style="font-size: 24px"><label>Email<input style="font-size: 24px" runat="server" id="email" /></label></p>
+    <p style="font-size: 24px"><label>Username<input style="font-size: 24px" runat="server" id="username" /></label></p>
+    <p style="font-size: 24px"><label>Password<input style="font-size: 24px" runat="server" id="password" /></label></p>
+    <p style="font-size: 24px"><label>First Name<input style="font-size: 24px" runat="server" id="firstname" /></label></p>
+    <p style="font-size: 24px"><label>Last Name<input style="font-size: 24px" runat="server" id="lastname" /></label></p>
+    <p style="font-size: 24px"><input style="font-size: 24px" runat="server" type="button" id="register" value="Register" /></p>
 
 
     <script type="text/javascript">
         $(document).ready(function () {
+
+            $('#register').click(function () {
+                var _email = document.getElementById('email').value;
+                var _username = document.getElementById('username').value;
+                var _password = document.getElementById('password').value;
+                var _firstname = document.getElementById('firstname').value;
+                var _lastname = document.getElementById('lastname').value;
+                
+                $.ajax({
+                    type: "POST",
+                    url: '/Hackerrank/Register',
+                    contentType: 'application/json; charset=utf-8',
+                    dataType: "json",
+                    data: JSON.stringify({ email:_email, username:_username, password:_password,firstname:_firstname,lastname:_lastname }),
+                    success: function (model) {
+                        alert('Success');
+                    },
+                    error: function (model) {
+                        alert('Error');
+                    }
+                });
+            });
 
 
         });
