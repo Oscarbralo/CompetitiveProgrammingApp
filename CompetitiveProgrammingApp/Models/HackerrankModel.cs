@@ -7,7 +7,9 @@ namespace CompetitiveProgrammingApp.Models
 {
     public class HackerrankModel
     {
-        public bool IsActive { get; set; }
+        public bool RegisterSuccess { get; set; }
+
+        public IEnumerable<string> ErrorList { get; set; }
 
         public string Email { get; set; }
 

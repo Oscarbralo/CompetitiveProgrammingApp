@@ -3,18 +3,28 @@
 <script src="~/scripts/jquery-1.11.3.js"></script>
 
 <body>
+    <div style="text-align: center; border: solid">
+        <p><img id="title" src="~/images/Hackerrank.png" style="width: 300px; height: 100px" /></p>
+        <p><a style="text-align: center; font-size: 24px" href="https://www.hackerrank.com/">HackerRank</a></p>
+    </div>
 
-    <p style="text-align: center; border: solid">
-        <img id="title" src="~/images/Hackerrank.png" style="width: 300px; height: 100px" />
-    </p>
-    <div style="text-align: center; border: solid; font-size: 24px"><a href="https://www.hackerrank.com/">HackerRank</a></div>
-    <p style="font-size: 24px"><label>Email<input style="font-size: 24px" runat="server" id="email" /></label></p>
-    <p style="font-size: 24px"><label>Username<input style="font-size: 24px" runat="server" id="username" /></label></p>
-    <p style="font-size: 24px"><label>Password<input style="font-size: 24px" runat="server" id="password" /></label></p>
-    <p style="font-size: 24px"><label>First Name<input style="font-size: 24px" runat="server" id="firstname" /></label></p>
-    <p style="font-size: 24px"><label>Last Name<input style="font-size: 24px" runat="server" id="lastname" /></label></p>
-    <p style="font-size: 24px"><input style="font-size: 24px" runat="server" type="button" id="register" value="Register" /></p>
-
+    
+    <p style="margin-left: 100px; font-size: 24px">Quick register</p>
+    <p style="font-size: 18px">If you want to quick register on HackerRank, please enter the details below</p>
+    <form style="font-size: 24px">
+        <p>
+            <label>Email<input style="font-size: 24px; margin-left: 85px" runat="server" id="email" /><label id="emailerror" style="visibility: hidden; margin-left:10px"></label></label>
+        </p>
+        <p>
+            <label>Username<input style="font-size: 24px; margin-left: 45px" runat="server" id="username" /><label id="usernameerror" style="visibility: hidden; margin-left:10px"></label></label>
+        </p>
+        <p>
+            <label>Password<input type="password" style="font-size: 24px; margin-left: 50px" runat="server" id="password" /><label id="passworderror" style="visibility: hidden; margin-left:10px"></label></label>
+        </p>
+        <p>
+            <input style="font-size: 24px" runat="server" type="button" id="register" value="Register" /><label id="successRegister" style="visibility: hidden; margin-left:10px"></label>
+        </p>
+    </form>
 
     <script type="text/javascript">
         $(document).ready(function () {
@@ -23,17 +33,40 @@
                 var _email = document.getElementById('email').value;
                 var _username = document.getElementById('username').value;
                 var _password = document.getElementById('password').value;
-                var _firstname = document.getElementById('firstname').value;
-                var _lastname = document.getElementById('lastname').value;
-                
+
                 $.ajax({
                     type: "POST",
                     url: '/Hackerrank/Register',
                     contentType: 'application/json; charset=utf-8',
                     dataType: "json",
-                    data: JSON.stringify({ email:_email, username:_username, password:_password,firstname:_firstname,lastname:_lastname }),
+                    data: JSON.stringify({ email: _email, username: _username, password: _password }),
                     success: function (model) {
-                        alert('Success');
+                        var usernameError = 0
+                        var passwordError = 0
+                        var emailError = 0
+                        $.each(model['ErrorList'], function (index, value) {
+                            passwordError += checkPassword(value.toString());
+                            usernameError += checkUsername(value.toString());
+                            emailError += checkEmail(value.toString());
+                        });
+
+                        if (usernameError == 0) {
+                            $('#usernameerror').css("visibility", "hidden")
+                        }
+                        if (passwordError == 0) {
+                            $('#passworderror').css("visibility", "hidden")
+                        }
+                        if (emailError == 0) {
+                            $('#emailerror').css("visibility", "hidden")
+                        }
+
+                        if (model['RegisterSuccess'] == true) {
+                            $('#successRegister').text("Registration successfully! Please, check your email")
+                            $('#successRegister').css("visibility", "visible")
+                            $('#emailerror').css("visibility", "hidden")
+                            $('#usernameerror').css("visibility", "hidden")
+                            $('#passworderror').css("visibility", "hidden")
+                        }
                     },
                     error: function (model) {
                         alert('Error');
@@ -41,6 +74,52 @@
                 });
             });
 
+            function checkUsername(value) {
+                if (value.indexOf("username is already taken") > 0) {
+                    $('#usernameerror').text("Sorry, that username is already taken!")
+                    $('#usernameerror').css("visibility", "visible")
+                    return 1
+                }
+                else if (value.indexOf("name should be between") > 0) {
+                    $('#usernameerror').text("Username is too short or too long")
+                    $('#usernameerror').css("visibility", "visible")
+                    return 1
+                }
+                return 0
+            };
+
+            function checkEmail(value) {
+                if (value.indexOf("enter a valid email address") > 0) {
+                    $('#emailerror').text("Your email address doesn't seem to be valid. Please enter a valid email address!")
+                    $('#emailerror').css("visibility", "visible")
+                    return 1
+                }
+                else if (value.indexOf("account associated to this email") > 0) {
+                    $('#emailerror').text("We already have an account associated to this email address, may be you would like to login! :)")
+                    $('#emailerror').css("visibility", "visible")
+                    return 1
+                }
+                else if (value.indexOf("address can't be empty") > 0) {
+                    $('#emailerror').text("Email address can't be empty")
+                    $('#emailerror').css("visibility", "visible")
+                    return 1
+                }
+                return 0
+            };
+
+            function checkPassword(value) {
+                if (value.indexOf("should be atleast 6 characters long") > 0) {
+                    $('#passworderror').text("Password length is too small! Its should be atleast 6 characters long!")
+                    $('#passworderror').css("visibility", "visible")
+                    return 1
+                }
+                else if (value.indexOf("provide a password") > 0) {
+                    $('#passworderror').text("Password is empty! Please provide a password")
+                    $('#passworderror').css("visibility", "visible")
+                    return 1
+                }
+                return 0
+            };
 
         });
 
